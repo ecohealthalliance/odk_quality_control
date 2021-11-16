@@ -106,24 +106,20 @@ anthro
 
 
 ```
-## # A tibble: 25 × 24
-##    id                start               end                 today               admin_team admin_date_survey   admin_location
-##    &lt;chr&gt;             &lt;dttm&gt;              &lt;dttm&gt;              &lt;dttm&gt;              &lt;chr&gt;      &lt;dttm&gt;              &lt;chr&gt;         
-##  1 uuid:cd765e1f-54… 2021-11-16 15:10:09 2021-11-16 15:25:32 2021-11-16 00:00:00 1          2021-11-19 00:00:00 1             
-##  2 uuid:41eebbdd-27… 2021-11-16 15:14:24 2021-11-16 15:25:15 2021-11-16 00:00:00 1          2021-11-18 00:00:00 1             
-##  3 uuid:9b5bb2dc-e2… 2021-11-16 14:59:33 2021-11-16 15:25:02 2021-11-16 00:00:00 1          2021-11-16 00:00:00 1             
-##  4 uuid:d3e4412f-f1… 2021-11-16 14:58:31 2021-11-16 15:24:47 2021-11-16 00:00:00 1          2021-11-16 00:00:00 1             
-##  5 uuid:b3fa396d-ca… 2021-11-16 14:57:32 2021-11-16 15:24:30 2021-11-16 00:00:00 1          2021-11-16 00:00:00 1             
-##  6 uuid:3d64560b-91… 2021-11-16 14:56:39 2021-11-16 15:24:15 2021-11-16 00:00:00 1          2021-11-16 00:00:00 1             
-##  7 uuid:75c5ed7e-e0… 2021-11-16 14:55:50 2021-11-16 15:23:58 2021-11-16 00:00:00 1          2021-11-16 00:00:00 1             
-##  8 uuid:ee3870de-b1… 2021-11-16 14:54:46 2021-11-16 15:23:35 2021-11-16 00:00:00 1          2021-11-16 00:00:00 1             
-##  9 uuid:b22ee844-f2… 2021-11-16 14:53:50 2021-11-16 15:23:20 2021-11-16 00:00:00 1          2021-11-16 00:00:00 1             
-## 10 uuid:92d447aa-9a… 2021-11-16 15:16:38 2021-11-16 15:23:02 2021-11-16 00:00:00 1          2021-11-16 00:00:00 1             
-## # … with 15 more rows, and 17 more variables: anthropometry_id &lt;int&gt;, anthropometry_age &lt;int&gt;, anthropometry_sex &lt;chr&gt;,
-## #   anthropometry_weight &lt;dbl&gt;, anthropometry_height &lt;dbl&gt;, anthropometry_muac &lt;int&gt;, anthropometry_oedema &lt;chr&gt;,
-## #   meta_instance_id &lt;chr&gt;, meta_instance_name &lt;chr&gt;, system_submission_date &lt;chr&gt;, system_submitter_id &lt;chr&gt;,
-## #   system_submitter_name &lt;chr&gt;, system_attachments_present &lt;int&gt;, system_attachments_expected &lt;int&gt;, system_device_id &lt;chr&gt;,
-## #   system_edits &lt;int&gt;, odata_context &lt;chr&gt;
+## # A tibble: 25 × 10
+##    team  date_survey         location    id   age sex   weight height  muac oedema
+##    &lt;chr&gt; &lt;dttm&gt;              &lt;chr&gt;    &lt;int&gt; &lt;int&gt; &lt;chr&gt;  &lt;dbl&gt;  &lt;dbl&gt; &lt;int&gt; &lt;chr&gt; 
+##  1 1     2021-11-19 00:00:00 1           21    48 1       13.8   98     154 2     
+##  2 1     2021-11-18 00:00:00 1           23    36 2       13.9   95.5   148 2     
+##  3 1     2021-11-16 00:00:00 1            9    13 1        8.3   73     136 2     
+##  4 1     2021-11-16 00:00:00 1            8    13 1        8.1  999     124 2     
+##  5 1     2021-11-16 00:00:00 1            7    24 2        8     74.2   144 2     
+##  6 1     2021-11-16 00:00:00 1            6    18 2        7.7   70.6   130 2     
+##  7 1     2021-11-16 00:00:00 1            5    15 1        7.4   70     124 2     
+##  8 1     2021-11-16 00:00:00 1            4    15 1        7.2   75.4   130 2     
+##  9 1     2021-11-16 00:00:00 1            3    15 1        7.1   67.5   124 2     
+## 10 1     2021-11-16 00:00:00 1           25    36 1       14.2   95.6   152 2     
+## # … with 15 more rows
 ```
 
 ---
