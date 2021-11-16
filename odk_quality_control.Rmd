@@ -1,0 +1,282 @@
+---
+title: "Open Data Kit Quality Control Workflows"
+subtitle: ""  
+author: "Ernest Guevarra"
+date: '16 November 2021'
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    css: xaringan-themer.css
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+      titleSlideClass: ["right", "bottom"]
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+
+library(zscorer)
+library(nutricheckr)
+library(dplyr)
+library(knitr)
+library(kableExtra)
+```
+
+```{r xaringan-themer, include=FALSE, warning=FALSE}
+library(xaringanthemer)
+style_mono_light(
+  #base_color = "#509935",
+  base_color = "#000000",
+  base_font_size = "22px",
+  title_slide_background_color = "#FFFFFF",
+  title_slide_background_image = "images/ecohealth_title_background_4by3.png",
+  title_slide_background_size = "contain",
+  #title_slide_text_color = "#509935",
+  title_slide_text_color = "#000000",
+  background_image = "images/ecohealth_slide_background_4by3.png",
+  header_font_google = google_font("Fira Sans"),
+  text_font_google = google_font("Fira Sans Condensed"),
+  code_font_google = google_font("Fira Mono"),
+  code_font_size = "0.7rem",
+  text_slide_number_font_size = "1em",
+  link_color = "#509935"
+)
+```
+
+### Outline
+
+* Brief overview of **ODK Central** version 1.3 data review feature
+
+* Demonstration of **ODK Central**'s data review feature
+
+     - manual process
+     - semi-automated process using R
+
+* Points to remember when using **ODK Central**'s data review feature
+
+---
+
+### ODK Central v1.3 and data review feature
+
+* Allows project manager/s to review submitted data from **ODK Central** and mark each row of data as either **approved**, **has issues**, or **rejected**.
+
+* When marking a submission with any of the review labels mentioned, a comment can be written to describe the reasons/basis for the label assigned.
+
+* Allows project manager/s to edit submitted data from **ODK Central** to resolve issues identified with the data submitted.
+
+* If data has been edited, project manager/s can then re-review and re-assign a review label accordingly (i.e., from **rejected** to **approved**)
+
+* creates history of edits done within **ODK Central** which can be used by project manager/s in the review process
+
+---
+
+### Demonstration of ODK Central data review feature - manual process
+
+* login to your **ODK Central** EHA account - only accounts of those with project manager roles will have the review features available
+
+* we will look at an example project on **anthropometric data collection for children 6-59 months old**
+
+* this will be good for quick and simple **eyeball** checks of data
+
+* more sophisticated and elaborate data checks will be too tedious and inefficient through this approach
+
+---
+
+### Demonstration of ODK Cenetral data review feature - semi-automated process using R
+
+* access data in R using the `{ruODK}` package
+
+* perform data quality review and checks (including more sophisticated/elaborate ones) on data using R functions for this purpose with the aim of identifying rows of data with issues
+
+* login to your **ODK Central** EHA account, go to your project and then manually mark and comment on the rows of data identified with issues
+
+---
+
+### Access data in R using the `{ruODK}` package
+
+```{r odksetup, eval = FALSE}
+## Install ruODK from GitHub
+remotes::install_github("ropensci/ruODK")
+
+## Load ruODK
+library(ruODK)
+
+## Setup connection with ODK Central
+ru_setup(
+  svc = "https://odk.eha.io/v1/projects/1/forms/anthropometry.svc",
+  un = "YOUR_USERNAME_HERE",
+  pw = "YOUR_PASSWORD_HERE",
+  tz = "GMT",
+  odkc_version = "1.3"
+)
+
+## Retrieve test data
+anthro <- odata_submission_get()
+
+## View data
+anthro
+```
+
+---
+
+### Access data in R using the `{ruODK}` package
+
+```{r odksetup_run, echo = FALSE, eval = TRUE}
+library(ruODK)
+
+ru_setup(
+  svc = "https://odk.eha.io/v1/projects/1/forms/anthropometry.svc",
+  un = Sys.getenv("ODK_USERNAME"),
+  pw = Sys.getenv("ODK_PASSWORD"),
+  tz = "GMT",
+  odkc_version = "1.3",
+  verbose = FALSE
+)
+
+anthro <- odata_submission_get()
+
+anthro
+```
+
+---
+
+background-image: url()
+background-color: #FFFFFF
+
+### Perform data quality review/checks
+
+```{r data_review_1, echo = TRUE, eval = FALSE}
+## Load anthropometric z-score calculator library and data checking library
+library(zscorer)
+library(nutricheckr)
+library(dplyr)
+
+## Calculate anthropometric z-scores
+anthro_zscores <- anthro %>%
+  mutate(age_days = anthropometry_age * (365.25 / 12)) %>%
+  addWGSR( 
+    sex = "anthropometry_sex", 
+    firstPart = "anthropometry_weight",
+    secondPart = "age_days",
+    index = "wfa"
+  ) %>%
+  addWGSR(
+    sex = "anthropometry_sex",
+    firstPart = "anthropometry_height",
+    secondPart = "age_days",
+    index = "hfa"
+  ) %>%
+  addWGSR(
+    sex = "anthropometry_sex",
+    firstPart = "anthropometry_weight",
+    secondPart = "anthropometry_height",
+    index = "wfh"
+  )
+
+## View output
+anthro_zscores
+```
+
+---
+
+### Perform data quality review/checks
+
+```{r data_review_1_run, echo = FALSE, eval = TRUE}
+## Calculate anthropometric z-scores
+anthro_zscores <- anthro %>%
+  mutate(age_days = anthropometry_age * (365.25 / 12)) %>%
+  addWGSR( 
+    sex = "anthropometry_sex", 
+    firstPart = "anthropometry_weight",
+    secondPart = "age_days",
+    index = "wfa"
+  ) %>%
+  addWGSR(
+    sex = "anthropometry_sex",
+    firstPart = "anthropometry_height",
+    secondPart = "age_days",
+    index = "hfa"
+  ) %>%
+  addWGSR(
+    sex = "anthropometry_sex",
+    firstPart = "anthropometry_weight",
+    secondPart = "anthropometry_height",
+    index = "wfh"
+  )
+
+anthro_zscores %>%
+  select(
+    -id, -start, -end, -today, -meta_instance_id, -meta_instance_name, 
+    -system_submission_date, -system_submitter_id, -system_submitter_name, 
+    -system_attachments_present, -system_attachments_expected, 
+    -system_device_id, -system_edits, -odata_context
+  ) %>%
+  rename_with(.fn = ~gsub(pattern = "anthropometry_|admin_", replacement = "", .x))
+```
+
+---
+
+### Perform data quality review/checks
+
+```{r data_review_2, echo = TRUE, eval = FALSE}
+## Flag z-scores
+anthro_flags <- anthro_zscores %>%
+  flag_who(hlaz = "hfaz", waz = "wfaz", whlz = "wfhz")
+
+anthro_flags
+```
+
+```{r data_review_2_run, echo = FALSE, eval = TRUE}
+## Flag z-scores
+anthro_flags <- anthro_zscores %>%
+  flag_who(hlaz = "hfaz", waz = "wfaz", whlz = "wfhz") %>%
+    select(
+    -id, -start, -end, -today, -meta_instance_id, -meta_instance_name, 
+    -system_submission_date, -system_submitter_id, -system_submitter_name, 
+    -system_attachments_present, -system_attachments_expected, 
+    -system_device_id, -system_edits, -odata_context
+  ) %>%
+  rename_with(.fn = ~gsub(pattern = "anthropometry_|admin_", replacement = "", .x))
+
+tibble::tibble(anthro_flags)
+```
+
+---
+
+### Perform data quality review/checks
+
+```{r data_review_3, echo = TRUE, eval = FALSE}
+## Subset anthropometric data to flagged rows
+anthro_for_checking <- anthro_flags %>%
+  filter(flag != 0)
+
+anthro_for_checking
+```
+
+```{r data_review_3_run, echo = FALSE, eval = TRUE}
+## Subset anthropometric data to flagged rows
+anthro_for_checking <- anthro_flags %>%
+  filter(flag != 0)
+
+tibble::tibble(anthro_for_checking)
+```
+
+---
+
+class: center, middle
+
+# Questions?
+
+---
+
+class: center, middle
+
+# Thank you!
+
+Slides can be viewed at https://ecohealthalliance.github.io/odk_quality_control or PDF version downloaded at https://ecohealthalliance.github.io/odk_quality_control/odk_quality_control.pdf
+
+R scripts for slides available at https://github.com/ecohealthalliance/odk_quality_control
+
+R script demonstrating how to access data from **ODK Central** using `ruODK` package at 
