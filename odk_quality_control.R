@@ -51,7 +51,7 @@ anthro_zscores <- anthro %>%
 
 ## Flag z-scores using WHO criteria --------------------------------------------
 anthro_flags <- anthro_zscores %>%
-  flag_who(haz = "hfaz", waz = "wfaz", whz = "wfhz")
+  flag_who(hlaz = "hfaz", waz = "wfaz", whlz = "wfhz")
 
 
 ## Get a list of rows of data with flags ---------------------------------------
