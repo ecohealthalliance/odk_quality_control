@@ -213,7 +213,12 @@ anthro_zscores %>%
     -system_attachments_present, -system_attachments_expected, 
     -system_device_id, -system_edits, -odata_context
   ) %>%
-  rename_with(.fn = ~gsub(pattern = "anthropometry_|admin_", replacement = "", .x))
+  rename_with(.fn = ~gsub(pattern = "anthropometry_|admin_", replacement = "", .x)) %>%
+  knitr::kable() %>%
+  kableExtra::kable_styling(bootstrap_options = c("condensed"),
+                            position = "center",
+                            html_font = "Arial Narrow",
+                            font_size = 12)
 ```
 
 ---
@@ -240,7 +245,12 @@ anthro_flags <- anthro_zscores %>%
   ) %>%
   rename_with(.fn = ~gsub(pattern = "anthropometry_|admin_", replacement = "", .x))
 
-tibble::tibble(anthro_flags)
+tibble::tibble(anthro_flags) %>%
+  knitr::kable() %>%
+  kableExtra::kable_styling(bootstrap_options = c("condensed"),
+                            position = "center",
+                            html_font = "Arial Narrow",
+                            font_size = 12)
 ```
 
 ---
@@ -260,7 +270,12 @@ anthro_for_checking
 anthro_for_checking <- anthro_flags %>%
   filter(flag != 0)
 
-tibble::tibble(anthro_for_checking)
+tibble::tibble(anthro_for_checking) %>%
+  knitr::kable() %>%
+  kableExtra::kable_styling(bootstrap_options = c("condensed"),
+                            position = "center",
+                            html_font = "Arial Narrow",
+                            font_size = 12)
 ```
 
 ---
