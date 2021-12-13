@@ -106,19 +106,19 @@ anthro
 
 
 ```
-## # A tibble: 25 × 10
-##    team  date_survey         location    id   age sex   weight height  muac oedema
-##    &lt;chr&gt; &lt;dttm&gt;              &lt;chr&gt;    &lt;int&gt; &lt;int&gt; &lt;chr&gt;  &lt;dbl&gt;  &lt;dbl&gt; &lt;int&gt; &lt;chr&gt; 
-##  1 1     2021-11-19 00:00:00 1           21    48 1       13.8   98     154 2     
-##  2 1     2021-11-18 00:00:00 1           23    36 2       13.9   95.5   148 2     
-##  3 1     2021-11-16 00:00:00 1            9    13 1        8.3   73     136 2     
-##  4 1     2021-11-16 00:00:00 1            8    13 1        8.1  999     124 2     
-##  5 1     2021-11-16 00:00:00 1            7    24 2        8     74.2   144 2     
-##  6 1     2021-11-16 00:00:00 1            6    18 2        7.7   70.6   130 2     
-##  7 1     2021-11-16 00:00:00 1            5    15 1        7.4   70     124 2     
-##  8 1     2021-11-16 00:00:00 1            4    15 1        7.2   75.4   130 2     
-##  9 1     2021-11-16 00:00:00 1            3    15 1        7.1   67.5   124 2     
-## 10 1     2021-11-16 00:00:00 1           25    36 1       14.2   95.6   152 2     
+## # A tibble: 25 × 12
+##    team  date_survey         location    id   age sex   weight height  muac oedema system_updated_… system_review_s…
+##    &lt;chr&gt; &lt;dttm&gt;              &lt;chr&gt;    &lt;int&gt; &lt;int&gt; &lt;chr&gt;  &lt;dbl&gt;  &lt;dbl&gt; &lt;int&gt; &lt;chr&gt;  &lt;chr&gt;            &lt;chr&gt;           
+##  1 1     2021-11-19 00:00:00 1           21    48 1       13.8   98     154 2      2021-11-16T19:4… hasIssues       
+##  2 1     2021-11-18 00:00:00 1           23    36 2       13.9   95.5   148 2      2021-11-16T19:5… hasIssues       
+##  3 1     2021-11-16 00:00:00 1            9    13 1        8.3   73     136 2      &lt;NA&gt;             &lt;NA&gt;            
+##  4 1     2021-11-16 00:00:00 1            8    13 1        8.1  999     124 2      &lt;NA&gt;             &lt;NA&gt;            
+##  5 1     2021-11-16 00:00:00 1            7    24 2        8     74.2   144 2      &lt;NA&gt;             &lt;NA&gt;            
+##  6 1     2021-11-16 00:00:00 1            6    18 2        7.7   70.6   130 2      &lt;NA&gt;             &lt;NA&gt;            
+##  7 1     2021-11-16 00:00:00 1            5    15 1        7.4   70     124 2      &lt;NA&gt;             &lt;NA&gt;            
+##  8 1     2021-11-16 00:00:00 1            4    15 1        7.2   75.4   130 2      &lt;NA&gt;             &lt;NA&gt;            
+##  9 1     2021-11-16 00:00:00 1            3    15 1        7.1   67.5   124 2      &lt;NA&gt;             &lt;NA&gt;            
+## 10 1     2021-11-16 00:00:00 1           25    36 1       14.2   95.6   152 2      &lt;NA&gt;             &lt;NA&gt;            
 ## # … with 15 more rows
 ```
 
@@ -168,9 +168,9 @@ anthro_zscores
 
 
 ```
-## ==============================================================================================================================
-## ==============================================================================================================================
-## ==============================================================================================================================
+## ====================================================================================================================
+## ====================================================================================================================
+## ====================================================================================================================
 ```
 
 &lt;table class="table table-condensed" style="font-size: 12px; font-family: Arial Narrow; margin-left: auto; margin-right: auto;"&gt;
@@ -186,6 +186,8 @@ anthro_zscores
    &lt;th style="text-align:right;"&gt; height &lt;/th&gt;
    &lt;th style="text-align:right;"&gt; muac &lt;/th&gt;
    &lt;th style="text-align:left;"&gt; oedema &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; system_updated_at &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; system_review_state &lt;/th&gt;
    &lt;th style="text-align:right;"&gt; age_days &lt;/th&gt;
    &lt;th style="text-align:right;"&gt; wfaz &lt;/th&gt;
    &lt;th style="text-align:right;"&gt; hfaz &lt;/th&gt;
@@ -204,6 +206,8 @@ anthro_zscores
    &lt;td style="text-align:right;"&gt; 98.0 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 154 &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 2021-11-16T19:44:20.846Z &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; hasIssues &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 1461.0000 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; -1.34 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; -1.27 &lt;/td&gt;
@@ -220,6 +224,8 @@ anthro_zscores
    &lt;td style="text-align:right;"&gt; 95.5 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 148 &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 2021-11-16T19:53:30.096Z &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; hasIssues &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 1095.7500 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 0.03 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 0.12 &lt;/td&gt;
@@ -236,6 +242,8 @@ anthro_zscores
    &lt;td style="text-align:right;"&gt; 73.0 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 136 &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 395.6875 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; -1.58 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; -1.62 &lt;/td&gt;
@@ -252,6 +260,8 @@ anthro_zscores
    &lt;td style="text-align:right;"&gt; 999.0 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 124 &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 395.6875 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; -1.80 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 380.02 &lt;/td&gt;
@@ -268,6 +278,8 @@ anthro_zscores
    &lt;td style="text-align:right;"&gt; 74.2 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 144 &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 730.5000 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; -3.07 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; -3.78 &lt;/td&gt;
@@ -284,6 +296,8 @@ anthro_zscores
    &lt;td style="text-align:right;"&gt; 70.6 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 130 &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 547.8750 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; -2.40 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; -3.48 &lt;/td&gt;
@@ -300,6 +314,8 @@ anthro_zscores
    &lt;td style="text-align:right;"&gt; 70.0 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 124 &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 456.5625 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; -3.00 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; -3.62 &lt;/td&gt;
@@ -316,6 +332,8 @@ anthro_zscores
    &lt;td style="text-align:right;"&gt; 75.4 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 130 &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 456.5625 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; -3.23 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; -1.49 &lt;/td&gt;
@@ -332,6 +350,8 @@ anthro_zscores
    &lt;td style="text-align:right;"&gt; 67.5 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 124 &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 456.5625 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; -3.34 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; -4.61 &lt;/td&gt;
@@ -348,6 +368,8 @@ anthro_zscores
    &lt;td style="text-align:right;"&gt; 95.6 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 152 &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 1095.7500 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; -0.08 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; -0.13 &lt;/td&gt;
@@ -364,6 +386,8 @@ anthro_zscores
    &lt;td style="text-align:right;"&gt; 96.5 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 142 &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 1095.7500 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; -0.20 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 0.11 &lt;/td&gt;
@@ -380,6 +404,8 @@ anthro_zscores
    &lt;td style="text-align:right;"&gt; 99.7 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 142 &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 1461.0000 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; -1.58 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; -0.86 &lt;/td&gt;
@@ -396,6 +422,8 @@ anthro_zscores
    &lt;td style="text-align:right;"&gt; 70.4 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 116 &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 395.6875 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; -3.04 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; -1.84 &lt;/td&gt;
@@ -412,6 +440,8 @@ anthro_zscores
    &lt;td style="text-align:right;"&gt; 97.2 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 142 &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 1095.7500 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; -0.63 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 0.30 &lt;/td&gt;
@@ -428,6 +458,8 @@ anthro_zscores
    &lt;td style="text-align:right;"&gt; 96.3 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 160 &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 1461.0000 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; -1.41 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; -1.49 &lt;/td&gt;
@@ -444,6 +476,8 @@ anthro_zscores
    &lt;td style="text-align:right;"&gt; 96.0 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 142 &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 1461.0000 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; -2.07 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; -1.75 &lt;/td&gt;
@@ -460,6 +494,8 @@ anthro_zscores
    &lt;td style="text-align:right;"&gt; 88.2 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 146 &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 1461.0000 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; -2.14 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; -3.61 &lt;/td&gt;
@@ -476,6 +512,8 @@ anthro_zscores
    &lt;td style="text-align:right;"&gt; 79.7 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 144 &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 1095.7500 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; -1.28 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; -4.42 &lt;/td&gt;
@@ -492,6 +530,8 @@ anthro_zscores
    &lt;td style="text-align:right;"&gt; 85.6 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 144 &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 791.3750 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; -0.71 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; -0.55 &lt;/td&gt;
@@ -508,6 +548,8 @@ anthro_zscores
    &lt;td style="text-align:right;"&gt; 86.5 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 138 &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 1095.7500 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; -2.60 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; -2.59 &lt;/td&gt;
@@ -524,6 +566,8 @@ anthro_zscores
    &lt;td style="text-align:right;"&gt; 80.2 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 140 &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 730.5000 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; -1.79 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; -2.49 &lt;/td&gt;
@@ -540,6 +584,8 @@ anthro_zscores
    &lt;td style="text-align:right;"&gt; 81.0 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 146 &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 730.5000 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; -2.06 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; -2.23 &lt;/td&gt;
@@ -556,6 +602,8 @@ anthro_zscores
    &lt;td style="text-align:right;"&gt; 79.4 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 136 &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 730.5000 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; -2.03 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; -2.17 &lt;/td&gt;
@@ -572,6 +620,8 @@ anthro_zscores
    &lt;td style="text-align:right;"&gt; 82.5 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 127 &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 2021-11-16T21:47:58.383Z &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; rejected &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 608.7500 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; -4.54 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; -0.07 &lt;/td&gt;
@@ -588,6 +638,8 @@ anthro_zscores
    &lt;td style="text-align:right;"&gt; 103.4 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 142 &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 1461.0000 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; -1.13 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 0.16 &lt;/td&gt;
@@ -622,6 +674,8 @@ anthro_flags
    &lt;th style="text-align:right;"&gt; height &lt;/th&gt;
    &lt;th style="text-align:right;"&gt; muac &lt;/th&gt;
    &lt;th style="text-align:left;"&gt; oedema &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; system_updated_at &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; system_review_state &lt;/th&gt;
    &lt;th style="text-align:right;"&gt; age_days &lt;/th&gt;
    &lt;th style="text-align:right;"&gt; wfaz &lt;/th&gt;
    &lt;th style="text-align:right;"&gt; hfaz &lt;/th&gt;
@@ -642,6 +696,8 @@ anthro_flags
    &lt;td style="text-align:right;"&gt; 98.0 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 154 &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 2021-11-16T19:44:20.846Z &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; hasIssues &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 1461.0000 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; -1.34 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; -1.27 &lt;/td&gt;
@@ -660,6 +716,8 @@ anthro_flags
    &lt;td style="text-align:right;"&gt; 95.5 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 148 &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 2021-11-16T19:53:30.096Z &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; hasIssues &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 1095.7500 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 0.03 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 0.12 &lt;/td&gt;
@@ -678,6 +736,8 @@ anthro_flags
    &lt;td style="text-align:right;"&gt; 73.0 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 136 &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 395.6875 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; -1.58 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; -1.62 &lt;/td&gt;
@@ -696,6 +756,8 @@ anthro_flags
    &lt;td style="text-align:right;"&gt; 999.0 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 124 &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 395.6875 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; -1.80 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 380.02 &lt;/td&gt;
@@ -714,6 +776,8 @@ anthro_flags
    &lt;td style="text-align:right;"&gt; 74.2 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 144 &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 730.5000 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; -3.07 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; -3.78 &lt;/td&gt;
@@ -732,6 +796,8 @@ anthro_flags
    &lt;td style="text-align:right;"&gt; 70.6 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 130 &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 547.8750 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; -2.40 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; -3.48 &lt;/td&gt;
@@ -750,6 +816,8 @@ anthro_flags
    &lt;td style="text-align:right;"&gt; 70.0 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 124 &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 456.5625 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; -3.00 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; -3.62 &lt;/td&gt;
@@ -768,6 +836,8 @@ anthro_flags
    &lt;td style="text-align:right;"&gt; 75.4 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 130 &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 456.5625 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; -3.23 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; -1.49 &lt;/td&gt;
@@ -786,6 +856,8 @@ anthro_flags
    &lt;td style="text-align:right;"&gt; 67.5 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 124 &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 456.5625 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; -3.34 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; -4.61 &lt;/td&gt;
@@ -804,6 +876,8 @@ anthro_flags
    &lt;td style="text-align:right;"&gt; 95.6 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 152 &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 1095.7500 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; -0.08 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; -0.13 &lt;/td&gt;
@@ -822,6 +896,8 @@ anthro_flags
    &lt;td style="text-align:right;"&gt; 96.5 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 142 &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 1095.7500 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; -0.20 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 0.11 &lt;/td&gt;
@@ -840,6 +916,8 @@ anthro_flags
    &lt;td style="text-align:right;"&gt; 99.7 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 142 &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 1461.0000 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; -1.58 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; -0.86 &lt;/td&gt;
@@ -858,6 +936,8 @@ anthro_flags
    &lt;td style="text-align:right;"&gt; 70.4 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 116 &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 395.6875 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; -3.04 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; -1.84 &lt;/td&gt;
@@ -876,6 +956,8 @@ anthro_flags
    &lt;td style="text-align:right;"&gt; 97.2 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 142 &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 1095.7500 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; -0.63 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 0.30 &lt;/td&gt;
@@ -894,6 +976,8 @@ anthro_flags
    &lt;td style="text-align:right;"&gt; 96.3 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 160 &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 1461.0000 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; -1.41 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; -1.49 &lt;/td&gt;
@@ -912,6 +996,8 @@ anthro_flags
    &lt;td style="text-align:right;"&gt; 96.0 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 142 &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 1461.0000 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; -2.07 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; -1.75 &lt;/td&gt;
@@ -930,6 +1016,8 @@ anthro_flags
    &lt;td style="text-align:right;"&gt; 88.2 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 146 &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 1461.0000 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; -2.14 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; -3.61 &lt;/td&gt;
@@ -948,6 +1036,8 @@ anthro_flags
    &lt;td style="text-align:right;"&gt; 79.7 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 144 &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 1095.7500 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; -1.28 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; -4.42 &lt;/td&gt;
@@ -966,6 +1056,8 @@ anthro_flags
    &lt;td style="text-align:right;"&gt; 85.6 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 144 &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 791.3750 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; -0.71 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; -0.55 &lt;/td&gt;
@@ -984,6 +1076,8 @@ anthro_flags
    &lt;td style="text-align:right;"&gt; 86.5 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 138 &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 1095.7500 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; -2.60 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; -2.59 &lt;/td&gt;
@@ -1002,6 +1096,8 @@ anthro_flags
    &lt;td style="text-align:right;"&gt; 80.2 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 140 &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 730.5000 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; -1.79 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; -2.49 &lt;/td&gt;
@@ -1020,6 +1116,8 @@ anthro_flags
    &lt;td style="text-align:right;"&gt; 81.0 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 146 &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 730.5000 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; -2.06 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; -2.23 &lt;/td&gt;
@@ -1038,6 +1136,8 @@ anthro_flags
    &lt;td style="text-align:right;"&gt; 79.4 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 136 &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 730.5000 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; -2.03 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; -2.17 &lt;/td&gt;
@@ -1056,6 +1156,8 @@ anthro_flags
    &lt;td style="text-align:right;"&gt; 82.5 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 127 &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 2021-11-16T21:47:58.383Z &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; rejected &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 608.7500 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; -4.54 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; -0.07 &lt;/td&gt;
@@ -1074,6 +1176,8 @@ anthro_flags
    &lt;td style="text-align:right;"&gt; 103.4 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 142 &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 1461.0000 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; -1.13 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 0.16 &lt;/td&gt;
@@ -1110,6 +1214,8 @@ anthro_for_checking
    &lt;th style="text-align:right;"&gt; height &lt;/th&gt;
    &lt;th style="text-align:right;"&gt; muac &lt;/th&gt;
    &lt;th style="text-align:left;"&gt; oedema &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; system_updated_at &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; system_review_state &lt;/th&gt;
    &lt;th style="text-align:right;"&gt; age_days &lt;/th&gt;
    &lt;th style="text-align:right;"&gt; wfaz &lt;/th&gt;
    &lt;th style="text-align:right;"&gt; hfaz &lt;/th&gt;
@@ -1130,6 +1236,8 @@ anthro_for_checking
    &lt;td style="text-align:right;"&gt; 82.5 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 127 &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 2021-11-16T21:47:58.383Z &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; rejected &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 608.75 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; -4.54 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; -0.07 &lt;/td&gt;
